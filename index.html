@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mert Saglam</title>
+    <link rel="canonical" href="https://mert.saglam.id"/>
+    <link href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+    <!-- build:css -->
+    <link href="css/texne.css" rel="stylesheet" type="text/css"/>
+    <link href="css/a.css" rel="stylesheet" type="text/css"/>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div id="container">
+      <div style="float:right;height:200px;width:170px;border:1px solid;margin:0 0 10px 10px;"></div>
+      <h1>Mert Saglam</h1>
+      <div class=contact><b>saglam@uw.edu</b> • <a href="tel:+12069923374" class=tel>(206) 992-3374</a></div>
+        I am a final year graduate student (expected graduation January 2019) in the theory group at the UW
+        advised by <a href="//homes.cs.washington.edu/~shayan/">Shayan Oveis Gharan</a>.
+        <h4>Research Interests:</h4>
+        <a href="//en.wikipedia.org/wiki/Theory_of_computation">Theory of computation</a>, <a href="//en.wikipedia.org/wiki/Communication_complexity">communication complexity</a>, and algorithms. 
+        Information theory, Markov chains, probability, and stochastic processes. 
+      <h2>Talks and events</h2>
+        <table>
+          <tr>
+            <td class="dt">Tue, Oct 9</td><td class=dt>2018</td><td><a href="//www.irif.fr/~focs2018/finalprogram.html">FOCS 2018 (Paris) »</a></td>
+          </tr>
+          <tr>
+            <td class="dt">Wed, Nov 7</td><td class=dt>2018</td><td>Microsoft Research (Redmond)</td>
+          </tr>
+          <tr>
+            <td class="dt">Wed, Nov 14</td><td class=dt>2018</td><td><a href="//www.cs.cmu.edu/~./theorylunch/pastSemesterIndices/Fall2018.html">CMU Theory Lunch (Pittsburgh) »</a></td>
+          </tr>
+          <tr>
+            <td class="dt next">Wed, Mar 13</td><td class="dt"></td><td><a href="//archive.dimacs.rutgers.edu/seminars.html">Rutgers Theory Seminar (New Jersey) »</a></td>
+          </tr>
+        </table>
+      
+      <h2>Publications</h2>
+      <ul>
+        <li>
+          <a class="paper noabs">Optimal protocols for the $k$-set intersection 
+          and equality problems</a><br/>
+          (with <a href="//users.renyi.hu/~tardos/">Gábor Tardos</a>)<br/>
+          Manuscript 2019
+        </li>
+        <li>
+          <a href="javascript:" class="paper">Near log-convexity of measured heat in (discrete) 
+          time and consequences</a>
+          <button type="button" class="v" data-id="Saglam2018">v2</button><br/>
+          59th Annual Symposium on Foundations of Computer Science (FOCS 2018)<br/>
+          <a class="l" href="pdf/heatdiscrete.pdf">[pdf]</a>
+          <a class="l" href="javascript:">[abstract]</a>
+          <a class="l" href="//arxiv.org/abs/1808.06717">[arXiv]</a>
+          <a class="l" href="slides/heatdiscrete">[slides]</a>
+          <a class="l" href="javascript:" data-id="Saglam2018">[bib]</a><br/>
+          <a class="l" href="http://www.wisdom.weizmann.ac.il/~oded/my-choice.html#c253">[Goldreich's choices]</a>
+          <a class=l href="//ptreview.sublinear.info/?p=1030">[Property testing review]</a>
+          <div class="abs">
+            <p>We answer a
+            <a href="//doi.org/10.1007/BF02579234">1982 conjecture of Erdős and Simonovits</a>
+            about the growth of number of $k$-walks in a graph, which incidentally 
+            was posed as a question earlier by Blakley and Dixon in 1966. 
+            We prove this conjecture in a more general setup than the earlier treatment,
+            furthermore, through a refinement and strengthening of this inequality, we resolve two
+            related open questions in complexity theory: the communication complexity
+            of the $k$-Hamming distance is $\Omega(k\log k)$ and that consequently any
+            property tester for $k$-linearity requires $\Omega(k\log k)$ queries.
+            
+            <p>Suppose some initial heat configuration $u\colon\Omega\to\reals_+$ over a 
+            discrete space $\Omega$ is given. The configuration evolves according to 
+            the map $z\mapsto S z$ in discrete time steps $t=0,1,\ldots$ for some symmetric 
+            stochastic matrix $S\colon\Omega\times\Omega\to\reals_+$ and we measure the amount 
+            of heat contained in a certain region $v$ over time: $m_t=\langle v,S^tu\rangle$
+            denotes our measurement at time $t$,
+            where $\|u\|_2 = \|v\|_2 = 1$ for normalization. What can we say about 
+            $\{m_t\}_{t=0}^{\infty}$ that holds for any $S,u,v$?
+            </p>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:" class="paper">On the communication complexity of sparse 
+          set disjointness and exists-equal problems</a><br/>
+          (with Gábor Tardos)<br/>
+          54th Annual Symposium on Foundations of Computer Science (FOCS 2013)<br/>
+          <a class="l" href="pdf/ssd.pdf">[pdf]</a>
+          <a class="l" href="javascript:">[abstract]</a>
+          <a class="l" href="//arxiv.org/abs/1304.1217">[arXiv]</a>
+          <a class="l" href="slides/ssd.pdf">[slides]</a>
+          <a class="l" href="javascript:" data-id="SaglamT2013">[bib]</a>
+          <div class="abs">
+            <p>We show that the $r$-round communication complexity
+            of the $k$-disjointness problem is precisely
+            $\Theta(k\log^{(r)} k)$ bits.
+            Setting $r=\log^* k$, our upper bound gives an $O(k)$-bits,
+            $\log^* k$-rounds protocol with error probability exponentially
+            small in $k$. This improves the best previous protocol due to
+            Håstad and Wigderson, which ran in $O(\log k)$ rounds and erred
+            with constant probability.</p>
+            <p>Our lower bound applies even to the simpler task of computing the
+            OR of $k$ independent instances of equality. An important aspect of
+            our work is that the lower bound we get is super-linear in $k$,
+            even though a single instance of equality can be solved with $O(1)$
+            bits and constant error probability.
+            </p>
+          </div>
+        </li>
+        <li>
+          <a class="paper noabs">Tight Bounds for Data Stream Algorithms and Communication 
+          Problems</a><br/>
+          (supervisor: Gábor Tardos)<br/>
+          M.Sc. Thesis, SFU, School of Computing Science. September 2011.<br/>
+          <a class="l" href="pdf/msc-thesis.pdf">[pdf]</a>
+          <a class="l" href="javascript:" data-id="Saglam2011">[bib]</a>
+        </li>
+        <li>
+          <a href="javascript:" class="paper">
+            Tight Bounds for $L_p$ Samplers, Finding Duplicates in Streams, and Related Problems
+          </a><br/>
+          (with <a href="//scholar.google.com/citations?user=a5yP56oAAAAJ&hl=en">Hossein Jowhari</a> and Gábor Tardos)<br/>
+          30th Symposium on Principles of Database Systems (PODS 2011)<br/>
+          <a class="l" href="pdf/lpsampler.pdf">[pdf]</a>
+          <a class="l" href="javascript:">[abstract]</a>
+          <a class="l" href="//arxiv.org/abs/1012.4889">[arXiv]</a>
+          <a class="l" href="slides/lpsampler.pdf">[slides]</a>
+          <a class="l" href="javascript:" data-id="JowhariST2011">[bib]</a>
+          <div class="abs">
+            <p>We present $L_p$ sampling algorithms using $O(\log^2 n)$ bits
+            of space for $p\in[0,2)$ in the streaming model and show that
+            $\Omega(\log^2 n)$ space is required by any such algorithm.
+            </p>
+            <p>As an application, we present an $O(\log^2 n)$ space algorithm
+            for finding a duplicate in a stream of length $n+1$ over the
+            alphabet $[n]$, improving on the previous $O(\log^3 n)$ bound due to
+            Gopalan and Radhakrishnan.
+            </p>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:" class="paper">Periodicity in Streams</a><br/>
+          (with Funda Ergün and Hossein Jowhari)<br/>
+          14th Intl. Workshop on Randomization and Computation (RANDOM 2010)<br/>
+          <a class="l" href="pdf/periodicity.pdf">[pdf]</a>
+          <a class="l" href="javascript:">[abstract]</a>
+          <a class="l" href="javascript:" data-id="ErgunJS2010">[bib]</a>
+          <div class="abs">
+            <p>We give an $O(\log^2 n)$ space one pass streaming algorithm that
+            finds the period of a stream, provided the stream is periodic.
+            At the core of this algorithm is a new one pass $O(\log n\log m)$
+            space pattern matching algorithm for finding occurrences
+            of a length $m$ pattern in a text of size $n$. This algorithm uses
+            similar ideas to Porat and Porat’s algorithm in FOCS 2009
+            but it does not need an offline pre-processing stage and is simpler.
+            </p><p>
+            In the second part, we study distance to $p$-periodicity under the
+            Hamming metric and provide space efficient approximation algorithms.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- build:js -->
+    <script src="js/texne.js"></script>
+    <script src="js/a.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
+

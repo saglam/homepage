@@ -1,0 +1,10 @@
+-- Full Lato Regular
+-- Heatdiscrete v2
+
+-- SSD v2
+-- Heatdiscrete animation
+
+-- Slides --DONE--
+-- Compression --SORT OF-- No good compression possible with cloudfront
+-- Redirect homes.cs.washington.edu/~saglam --DONE--
+-- prep cv -- done

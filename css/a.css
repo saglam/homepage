@@ -1,0 +1,186 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+ src: url('/font/g400.woff2') format('woff2'),
+       url('/font/l400.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/font/g400i.woff2') format('woff2'),
+       url('/font/l400i.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/font/g700.woff2') format('woff2'),
+       url('/font/l700.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/font/g700i.woff2') format('woff2'),
+       url('/font/l700i.woff')  format('woff');
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4em;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+  color: #222;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+b {
+  color: #222;
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0.4em 0;
+}
+
+h2 {
+  font-size: 17px;
+  margin: 20px 0 10px;
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: bold;
+  margin: 0.7em 0 0.2em;
+}
+
+ul {
+  margin-left: -1.7em;
+  list-style-type:square;
+}
+
+li {
+  padding-bottom: 10px;
+}
+
+pre {
+  font-size: 10px;
+}
+
+#container {
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.contact {
+  margin-bottom: 0.7em;
+}
+
+.tel {
+  font-weight: bold;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.dt {
+  color: #444;
+  text-align: right;
+  padding-right: 0.4em;
+}
+
+.dt.next {
+  color: #b33;
+  font-weight: bold;
+}
+
+.v {
+  font-size: 10px;
+  color: #96B;
+  border: 1px solid;
+  padding: 1px 2px;
+  background: none;
+  margin-left: 2px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.l {
+  color: #855;
+}
+
+.paper.noabs {
+  text-decoration: none;
+}
+
+.abs {
+  padding: 0 10% 0 4%;
+  font-size: 13px;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.2s;
+  opacity: 0;
+}
+
+.abs.show {
+  opacity: 1;
+  max-height: 400px;
+}
+
+.paper{
+  font-weight:bold;
+}
+
+.mask {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.6);
+}
+
+.mc {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px 25px;
+  border: 0;
+  max-width: 500px;
+  box-shadow: 0 0 5px #aaa;
+}
+
+.mx {
+  color: #666;
+  padding: 10px;
+  float: right;
+  position: relative;
+  top: -10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mx:hover,
+.mx:focus {
+  color: black;
+  text-decoration: none;
+}
+
