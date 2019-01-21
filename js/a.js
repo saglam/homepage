@@ -79,31 +79,28 @@ var bibMap = {
  * @type {Object<string, string>} mapping changelog keys to changelog entries
  */
 var changelogMap = {
-  "Saglam2018" : "build:Saglam2018changelog"
+  "Saglam2018" : "<pre>build:Saglam2018changelog</pre>See also the <a class=l href=//github.com/saglam/heatdiscrete>git repo</a>."
 };
 
 /**
- * @param {string} text
+ * @param {Element} content
  */
-function showText(text) {
+function showDialog(content) {
   /** @type {Element} */
-  var mask = document.createElement('div');
+  let mask = document.createElement('div');
   /** @type {Element} */
-  var menu = document.createElement('div');
+  let menu = document.createElement('div');
   /** @type {Element} */
-  var cont = document.createElement('pre');
-  /** @type {Element} */
-  var close = document.createElement('span');
+  let close = document.createElement('span');
   close.innerText = "x";
   close.setAttribute("class", "mx");
-  cont.appendChild(document.createTextNode(text));
   menu.setAttribute("class", "mc");
   menu.appendChild(close);
-  menu.appendChild(cont);
+  menu.appendChild(content);
   mask.setAttribute("class", "mask");
   mask.appendChild(menu);  
   document.body.appendChild(mask);
-  var destroy = function() {
+  let destroy = function() {
     close.onclick = null;
     mask.onmousedown = null;
     document.body.removeChild(mask);
@@ -114,6 +111,26 @@ function showText(text) {
       destroy();
     }
   };
+}
+
+/**
+ * @param {string} text
+ */
+function showText(text) {
+  /** @type {Element} */
+  let content = document.createElement('pre');
+  content.appendChild(document.createTextNode(text));
+  showDialog(content);
+}
+
+/**
+ * @param {string} html
+ */
+function showHtml(html) {
+  /** @type {Element} */
+  let content = document.createElement('div');
+  content.innerHTML = html;
+  showDialog(content);
 }
 
 /**
@@ -135,6 +152,8 @@ function linkPaper(paper) {
     } else if (elem.className.slice(0, 3) == "abs") {
       absDiv = elem;
     } else if (elem.className == "v") {
+      let id = elem.dataset.id;
+      if (!id) continue;
       elem.onclick = (
         /**
          * @param {string} changelogId
@@ -142,10 +161,10 @@ function linkPaper(paper) {
          */
         function (changelogId) {
           return function() {
-            showText(changelogMap[changelogId]);
+            showHtml(changelogMap[changelogId]);
           }
         }
-      )(elem.dataset.id);
+      )(id);
     } else if (elem.innerHTML == "[bib]") {
       elem.onclick = (
         /**
@@ -162,7 +181,7 @@ function linkPaper(paper) {
   }
   if (absDiv) {
     /** @type {function()} */
-    var toggler = (
+    let toggler = (
       /**
        * @param {Element} abstractElement
        * @return {function()}
@@ -185,15 +204,15 @@ function linkPaper(paper) {
  * @const
  * @type {!NodeList<!Element>}
  */
-var papers = document.getElementsByClassName("paper");
+let papers = document.getElementsByClassName("paper");
 /**
  * @const
  * @type {number}
  */
-var n = papers.length;
+let n = papers.length;
 
 /** @type {number} */
-var i;
+let i;
 for (i = 0; i < n; i++) {
   linkPaper(papers[i]);
 }
