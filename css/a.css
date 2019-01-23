@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
@@ -28,7 +28,7 @@
   font-weight: 700;
   src: url('/font/g700i.woff2') format('woff2'),
        url('/font/l700i.woff')  format('woff');
-}
+}*/
 
 body {
   font-family: 'Lato', sans-serif;
