@@ -79,7 +79,8 @@ var bibMap = {
  * @type {Object<string, string>} mapping changelog keys to changelog entries
  */
 var changelogMap = {
-  "Saglam2018" : "<pre>build:Saglam2018changelog</pre>See also the <a class=l href=//github.com/saglam/heatdiscrete>git repo</a>."
+  "Saglam2018"  : "<pre>build:Saglam2018changelog</pre>See also the <a class=l href='//github.com/saglam/heatdiscrete'>git repo</a>.",
+  "SaglamT2013" : "<pre>build:SaglamT2013changelog</pre>See also the <a class=l href='//github.com/saglam/ssd'>git repo</a>.",
 };
 
 /**

@@ -4,11 +4,13 @@ build/css/a.css: css/a.css css/texne.css
 	mkdir -p build/css
 	cat $^ | csso --output $@
 
-build/js/a.js: js/texne.js js/a.js ../papers/heatdiscrete/changelog.txt
+build/js/a.js: js/texne.js js/a.js ../papers/heatdiscrete/changelog.txt ../papers/ssd/changelog.txt
 	mkdir -p build/js
 	cp js/a.js build/js/a.tmp.js
 	$(eval Saglam2018changelog := $(shell cat ../papers/heatdiscrete/changelog.txt | fold -w 80 -s | perl -pe 's#\n#\\\\\\n#'))
+	$(eval SaglamT2013changelog := $(shell cat ../papers/ssd/changelog.txt | fold -w 80 -s | perl -pe 's#\n#\\\\\\n#'))
 	perl -0777 -i -pe "s#build:Saglam2018changelog#$(Saglam2018changelog)#" build/js/a.tmp.js
+	perl -0777 -i -pe "s#build:SaglamT2013changelog#$(SaglamT2013changelog)#" build/js/a.tmp.js
 	java -jar ../code/bluck-out/java/compiler.jar -W VERBOSE -O ADVANCED \
        --language_out ECMASCRIPT5_STRICT --charset UTF-8 --js js/texne.js build/js/a.tmp.js \
        | uglifyjs -m -o $@
