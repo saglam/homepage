@@ -12,11 +12,10 @@ var bibMap = {
 "  pages         = {967--978},\n" +
 "  year          = {2018},\n" +
 "  crossref      = {DBLP:conf/focs/2018},\n" +
-"  url           = {https://doi.org/10.1109/FOCS.2018.00095},\n" +
+"  url           = {https://arxiv.org/abs/1808.06717},\n" +
 "  doi           = {10.1109/FOCS.2018.00095},\n" +
 "  timestamp     = {Sun, 23 Dec 2018 08:29:07 +0100},\n" +
 "  biburl        = {https://dblp.org/rec/bib/conf/focs/Saglam18},\n" +
-"  bibsource     = {dblp computer science bibliography, https://dblp.org}\n" +
 ")",
 
   "SaglamT2013": "@InProceedings(   SaglamT2013,\n" +
@@ -27,10 +26,10 @@ var bibMap = {
 "                  Science, {FOCS} 2013, Berkeley, CA, October 26-29, 2013},\n" +
 "  pages         = {678--687},\n" +
 "  year          = {2013},\n" +
-"  url           = {http://arxiv.org/abs/1304.1217},\n" +
+"  url           = {https://arxiv.org/abs/1304.1217},\n" +
 "  doi           = {10.1109/FOCS.2013.78},\n" +
 "  timestamp     = {Tue, 16 Dec 2014 09:57:23 +0100},\n" +
-"  biburl        = {http://dblp.uni-trier.de/rec/bib/conf/focs/SaglamT13}\n" +
+"  biburl        = {https://dblp.org/rec/bib/conf/focs/SaglamT13}\n" +
 ")",
 
   "JowhariST2011": "@InProceedings(   JowhariST2011,\n" +
@@ -43,10 +42,10 @@ var bibMap = {
 "  pages         = {49--58},\n" +
 "  year          = {2011},\n" +
 "  crossref      = {DBLP:conf/pods/2011},\n" +
-"  url           = {http://arxiv.org/abs/1012.4889},\n" +
+"  url           = {https://arxiv.org/abs/1012.4889},\n" +
 "  doi           = {10.1145/1989284.1989289},\n" +
 "  timestamp     = {Wed, 23 May 2012 16:53:24 +0200},\n" +
-"  biburl        = {http://dblp.uni-trier.de/rec/bib/conf/pods/JowhariST11}\n" +
+"  biburl        = {https://dblp.org/rec/bib/conf/pods/JowhariST11}\n" +
 ")",
   "ErgunJS2010": "@InProceedings(   ErgunJS2010,\n" +
 "  author        = {Funda Ergün and Hossein Jowhari and Mert Sağlam},\n" +
@@ -60,7 +59,7 @@ var bibMap = {
 "  url           = {http://dx.doi.org/10.1007/978-3-642-15369-3_41},\n" +
 "  doi           = {10.1007/978-3-642-15369-3_41},\n" +
 "  timestamp     = {Sun, 29 Aug 2010 20:35:26 +0200},\n" +
-"  biburl        = {http://dblp.uni-trier.de/rec/bib/conf/approx/ErgunJS10}\n" +
+"  biburl        = {https://dblp.org/rec/bib/conf/approx/ErgunJS10}\n" +
 ")",
 
   "Saglam2011": "@MastersThesis(   Saglam2011,\n" +
