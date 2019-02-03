@@ -4,17 +4,17 @@ build/css/all.css: css/texne.css css/popup.css css/entry.css css/calendar.css
 	mkdir -p build/css
 	cat $^ | csso --output $@
 
-build/js/all.js: js/texne.js js/popup.js js/entry.js js/calendar.js ../papers/heatdiscrete/changelog.txt ../papers/ssd/changelog.txt
+build/js/all.js: js/texne.js js/popup.js js/entry.js js/calendar.js \
+                 references/main.bib \
+                 ../papers/heatdiscrete/changelog.txt ../papers/ssd/changelog.txt
 	mkdir -p build/js
-	cp js/entry.js build/js/entry.tmp.js
-	$(eval Saglam2018changelog := $(shell cat ../papers/heatdiscrete/changelog.txt | fold -w 80 -s | perl -pe 's#\n#\\\\\\n#'))
-	$(eval SaglamT2013changelog := $(shell cat ../papers/ssd/changelog.txt | fold -w 80 -s | perl -pe 's#\n#\\\\\\n#'))
-	perl -0777 -i -pe "s#build:Saglam2018changelog#$(Saglam2018changelog)#" build/js/entry.tmp.js
-	perl -0777 -i -pe "s#build:SaglamT2013changelog#$(SaglamT2013changelog)#" build/js/entry.tmp.js
+	cp js/entry.js build/js/entry.js
+	./filljs.sh
 	java -jar ../code/bluck-out/java/compiler.jar -W VERBOSE -O ADVANCED \
-       --language_out ECMASCRIPT5_STRICT --charset UTF-8 --js js/texne.js js/popup.js build/js/entry.tmp.js js/calendar.js \
-       | uglifyjs -m -o $@
-	rm -f build/js/entry.tmp.js
+	     --language_out ECMASCRIPT5_STRICT --charset UTF-8 \
+	     --js js/texne.js js/popup.js build/js/entry.js js/calendar.js \
+	     | uglifyjs -m -o $@
+	rm -f build/js/entry.js
 
 build/index.html: build/js/all.js build/css/all.css index.html
 	$(eval cssMd5 := $(shell sha1sum -b build/css/all.css | cut -c1-40 | base64 | cut -c1-6))
