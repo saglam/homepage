@@ -1,3 +1,9 @@
 [submodule "references"]
 	path = references
 	url = git@github.com:saglam/references
+[submodule "papers/ssd"]
+	path = papers/ssd
+	url = git@github.com:saglam/ssd
+[submodule "papers/heatdiscrete"]
+	path = papers/heatdiscrete
+	url = git@github.com:saglam/heatdiscrete

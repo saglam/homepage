@@ -6,7 +6,7 @@ build/css/all.css: css/texne.css css/popup.css css/entry.css css/calendar.css
 
 build/js/all.js: js/texne.js js/popup.js js/entry.js js/calendar.js \
                  references/main.bib \
-                 ../papers/heatdiscrete/changelog.txt ../papers/ssd/changelog.txt
+                 papers/heatdiscrete/changelog.txt papers/ssd/changelog.txt
 	mkdir -p build/js
 	cp js/entry.js build/js/entry.js
 	./filljs.sh
