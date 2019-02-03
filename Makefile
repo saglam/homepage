@@ -1,10 +1,10 @@
 local_deploy: build/index.html
 
-build/css/a.css: css/a.css css/texne.css css/calendar.css
+build/css/all.css: css/texne.css css/popup.css css/entry.css css/calendar.css
 	mkdir -p build/css
 	cat $^ | csso --output $@
 
-build/js/a.js: js/texne.js js/entry.js js/calendar.js ../papers/heatdiscrete/changelog.txt ../papers/ssd/changelog.txt
+build/js/all.js: js/texne.js js/popup.js js/entry.js js/calendar.js ../papers/heatdiscrete/changelog.txt ../papers/ssd/changelog.txt
 	mkdir -p build/js
 	cp js/entry.js build/js/entry.tmp.js
 	$(eval Saglam2018changelog := $(shell cat ../papers/heatdiscrete/changelog.txt | fold -w 80 -s | perl -pe 's#\n#\\\\\\n#'))
@@ -12,15 +12,15 @@ build/js/a.js: js/texne.js js/entry.js js/calendar.js ../papers/heatdiscrete/cha
 	perl -0777 -i -pe "s#build:Saglam2018changelog#$(Saglam2018changelog)#" build/js/entry.tmp.js
 	perl -0777 -i -pe "s#build:SaglamT2013changelog#$(SaglamT2013changelog)#" build/js/entry.tmp.js
 	java -jar ../code/bluck-out/java/compiler.jar -W VERBOSE -O ADVANCED \
-       --language_out ECMASCRIPT5_STRICT --charset UTF-8 --js js/texne.js build/js/entry.tmp.js js/calendar.js \
+       --language_out ECMASCRIPT5_STRICT --charset UTF-8 --js js/texne.js js/popup.js build/js/entry.tmp.js js/calendar.js \
        | uglifyjs -m -o $@
 	rm -f build/js/entry.tmp.js
 
-build/index.html: build/js/a.js build/css/a.css index.html
-	$(eval cssMd5 := $(shell sha1sum -b build/css/a.css | cut -c1-40 | base64 | cut -c1-6))
-	cp build/css/a.css build/css/$(cssMd5).css
-	$(eval jsMd5 := $(shell sha1sum -b build/js/a.js | cut -c1-40 | base64 | cut -c1-6))
-	cp build/js/a.js build/js/$(jsMd5).js
+build/index.html: build/js/all.js build/css/all.css index.html
+	$(eval cssMd5 := $(shell sha1sum -b build/css/all.css | cut -c1-40 | base64 | cut -c1-6))
+	cp build/css/all.css build/css/$(cssMd5).css
+	$(eval jsMd5 := $(shell sha1sum -b build/js/all.js | cut -c1-40 | base64 | cut -c1-6))
+	cp build/js/all.js build/js/$(jsMd5).js
 	cp index.html build/tmp.html
 	perl -0777 -i -pe 's/<!-- build:js -->\n?([\s\S]*?)\n?<!-- endbuild -->/<script async src=js\/$(jsMd5).js><\/script>/' build/tmp.html
 	perl -0777 -i -pe 's/<!-- build:css -->\n?([\s\S]*?)\n?<!-- endbuild -->/<link href=css\/$(cssMd5).css rel=stylesheet type="text\/css"\/>/' build/tmp.html
@@ -35,8 +35,8 @@ compress: clean build/index.html
 	mv -f build/index.html.gz build/index.html
 
 aws_deploy: local_deploy
-	rm -f build/js/a.js
-	rm -f build/css/a.css
+	rm -f build/js/all.js
+	rm -f build/css/all.css
 	aws s3 sync --metadata-directive REPLACE \
 	            --expires 2034-01-01T00:00:00Z \
 	            --acl public-read \

@@ -82,12 +82,12 @@ pre {
   font-size: 10px;
 }
 
-#container {
+#e {
   max-width: 500px;
   margin: 40px auto;
 }
 
-.contact {
+.ec {
   margin-bottom: 0.7em;
 }
 
@@ -113,13 +113,10 @@ pre {
   color: #855;
 }
 
-.m {
+.k {
   color: #448;
 }
 
-.paper.noabs {
-  text-decoration: none;
-}
 
 .abs {
   padding: 0 10% 0 4%;
@@ -135,48 +132,13 @@ pre {
   max-height: 400px;
 }
 
-.paper{
+/* Entry:Paper */
+
+.ep{
   font-weight:bold;
 }
 
-/* Popup dialog related */
-
-.pm {
-  display: block;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgb(255,255,255);
-  background-color: rgba(255,255,255,0.6);
-}
-
-.pc {
-  background-color: #fff;
-  margin: 10% auto auto;
-  padding: 20px 25px;
-  border: 0;
-  max-width: 500px;
-  box-shadow: 0 0 5px #aaa;
-}
-
-.px {
-  color: #666;
-  padding: 10px;
-  float: right;
-  position: relative;
-  top: -10px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.px:hover,
-.px:focus {
-  color: black;
+.ep.noabs {
   text-decoration: none;
 }
 

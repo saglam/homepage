@@ -1,4 +1,9 @@
 /**
+ * @fileoverview A tiny LaTeX to html/css renderer
+ * Reserves the css m* namespace
+ */
+
+/**
  * TeX book p. 158
  * @const
  * @enum {number} Atom type

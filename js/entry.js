@@ -83,57 +83,6 @@ var changelogMap = {
 };
 
 /**
- * @param {Element} content
- */
-function showDialog(content) {
-  /** @type {Element} */
-  let mask = document.createElement('div');
-  /** @type {Element} */
-  let menu = document.createElement('div');
-  /** @type {Element} */
-  let close = document.createElement('span');
-  close.innerText = "x";
-  close.setAttribute("class", "px");
-  menu.setAttribute("class", "pc");
-  menu.appendChild(close);
-  menu.appendChild(content);
-  mask.setAttribute("class", "pm");
-  mask.appendChild(menu);  
-  document.body.appendChild(mask);
-  let destroy = function() {
-    close.onclick = null;
-    mask.onmousedown = null;
-    document.body.removeChild(mask);
-  }
-  close.onclick = destroy;
-  mask.onmousedown = function(/** Event */ event) {
-    if (event.target == mask) {
-      destroy();
-    }
-  };
-}
-
-/**
- * @param {string} text
- */
-function showText(text) {
-  /** @type {Element} */
-  let content = document.createElement('pre');
-  content.appendChild(document.createTextNode(text));
-  showDialog(content);
-}
-
-/**
- * @param {string} html
- */
-function showHtml(html) {
-  /** @type {Element} */
-  let content = document.createElement('div');
-  content.innerHTML = html;
-  showDialog(content);
-}
-
-/**
  * @param {Element} paper element to link and texify
  */
 function linkPaper(paper) {
@@ -204,16 +153,9 @@ function linkPaper(paper) {
  * @const
  * @type {!NodeList<!Element>}
  */
-let papers = document.getElementsByClassName("paper");
-/**
- * @const
- * @type {number}
- */
-let n = papers.length;
+let papers = document.getElementsByClassName("ep");
 
-/** @type {number} */
-let i;
-for (i = 0; i < n; i++) {
+for (let i = 0, papersLen = papers.length; i < papersLen; i++) {
   linkPaper(papers[i]);
 }
 

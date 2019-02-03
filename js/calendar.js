@@ -1,3 +1,8 @@
+/**
+ * @fileoverview Calendar module
+ * Reserves the css c* namespace
+ */
+ 
 function getTogglerFor(/** @type {Element} */ detailElement) {
   return function() {
     for (let i = 0, len = calendarDetailElements.length; i < len; ++i) {
