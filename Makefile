@@ -29,11 +29,6 @@ build/index.html: build/js/all.js build/css/all.css index.html
 	touch --date="2019-01-01" build/js/$(jsMd5).js
 	touch --date="2019-01-01" build/css/$(cssMd5).css
 
-compress: clean build/index.html
-	mv -f build/js/$(jsMd5).js.gz build/js/$(jsMd5).js
-	mv -f build/css/$(cssMd5).css.gz build/css/$(cssMd5).css
-	mv -f build/index.html.gz build/index.html
-
 aws_deploy: local_deploy
 	rm -f build/js/all.js
 	rm -f build/css/all.css
@@ -54,12 +49,6 @@ aws_deploy: local_deploy
 aws_deploy_preso:
 	aws s3 sync --acl public-read ../presentations/heatdiscrete s3://mert.saglam.id/slides/heatdiscrete
 	aws cloudfront create-invalidation --distribution-id E18VDHOME7TQW8 --paths '/slides/heatdiscrete/*'
-
-ext:
-	mkdir -p build/js
-	$(eval injectCss := $(shell csso css/lato-math.css))
-	cp js/test.js build/js/test.js
-	sed -i 's#".texne-css{}"#"$(injectCss)"#' build/js/test.js
 
 clean:
 	rm -rf build

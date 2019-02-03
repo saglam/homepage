@@ -5,6 +5,6 @@
 -- Heatdiscrete animation
 
 -- Slides --DONE--
--- Compression --SORT OF-- No good compression possible with cloudfront
+-- Compression --SORT OF-- No good (precompressed, accept header sensitive) compression possible with s3
 -- Redirect homes.cs.washington.edu/~saglam --DONE--
--- prep cv -- done
+

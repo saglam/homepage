@@ -27,7 +27,6 @@ function linkCalendar(/** Element */ calendar) {
     /** @type {Element} */
     let detail = link.nextElementSibling;
     if (detail == null) {
-      console.log(cell);
       continue;
     }
     
