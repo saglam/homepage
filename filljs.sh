@@ -1,11 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
-Saglam2018changelog=$(cat papers/heatdiscrete/changelog.txt | fold -w 80 -s | perl -pe 's#\n#\\\\n#')
-perl -0777 -i -pe "s#build:Saglam2018changelog#$Saglam2018changelog#" build/js/entry.js
-echo $Saglam2018changelog
-SaglamT2013changelog=$(cat papers/ssd/changelog.txt | fold -w 80 -s | perl -pe 's#\n#\\\\n#g; s#"#\\\\"#g;')
-echo $SaglamT2013changelog
-perl -0777 -i -pe "s#build:SaglamT2013changelog#$SaglamT2013changelog#" build/js/entry.js
+declare -A PaperKeyToRepo
+PaperKeyToRepo["SaglamT2019"]="protocolrecipe"
+PaperKeyToRepo["Saglam2018"]="heatdiscrete"
+PaperKeyToRepo["SaglamT2013"]="ssd"
+PaperKeyToRepo["Saglam2011"]="mscthesis"
+PaperKeyToRepo["JowhariST2011"]="lpsampler"
+PaperKeyToRepo["ErgunJS2010"]="periodicity"
+
+changelogKeys="Saglam2018 SaglamT2013"
+for changelogKey in $changelogKeys; do
+  changelog=$(cat papers/${PaperKeyToRepo[$changelogKey]}/changelog.txt | fold -w 80 -s | perl -pe 's#\n#\\\\n#g; s#"#\\\\"#g;')
+  echo $changelog
+  perl -0777 -i -pe "s#build:${changelogKey}changelog#${changelog}#" build/js/entry.js
+done
 
 bibKeys="Saglam2018 SaglamT2013 Saglam2011 JowhariST2011 ErgunJS2010"
 for bibKey in $bibKeys; do
