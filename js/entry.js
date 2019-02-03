@@ -93,11 +93,11 @@ function showDialog(content) {
   /** @type {Element} */
   let close = document.createElement('span');
   close.innerText = "x";
-  close.setAttribute("class", "mx");
-  menu.setAttribute("class", "mc");
+  close.setAttribute("class", "px");
+  menu.setAttribute("class", "pc");
   menu.appendChild(close);
   menu.appendChild(content);
-  mask.setAttribute("class", "mask");
+  mask.setAttribute("class", "pm");
   mask.appendChild(menu);  
   document.body.appendChild(mask);
   let destroy = function() {
@@ -138,14 +138,14 @@ function showHtml(html) {
  */
 function linkPaper(paper) {
   /** @type {Element} */
-  var absButton;
+  let absButton;
   /** @type {Element} */
-  var absDiv;
+  let absDiv;
 
   renderElement(paper);
 
   /** @type {Element} */
-  var elem;
+  let elem;
   for (elem = paper; elem != null; elem = elem.nextElementSibling) {
     if (elem.innerHTML == "[abstract]") {
       absButton = elem;

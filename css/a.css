@@ -97,17 +97,6 @@ pre {
   display: inline-block;
 }
 
-.dt {
-  color: #444;
-  text-align: right;
-  padding-right: 0.4em;
-}
-
-.dt.next {
-  color: #b33;
-  font-weight: bold;
-}
-
 .v {
   font-size: 10px;
   color: #96B;
@@ -150,7 +139,9 @@ pre {
   font-weight:bold;
 }
 
-.mask {
+/* Popup dialog related */
+
+.pm {
   display: block;
   position: fixed;
   z-index: 1;
@@ -163,7 +154,7 @@ pre {
   background-color: rgba(255,255,255,0.6);
 }
 
-.mc {
+.pc {
   background-color: #fff;
   margin: 10% auto auto;
   padding: 20px 25px;
@@ -172,7 +163,7 @@ pre {
   box-shadow: 0 0 5px #aaa;
 }
 
-.mx {
+.px {
   color: #666;
   padding: 10px;
   float: right;
@@ -183,8 +174,8 @@ pre {
   cursor: pointer;
 }
 
-.mx:hover,
-.mx:focus {
+.px:hover,
+.px:focus {
   color: black;
   text-decoration: none;
 }

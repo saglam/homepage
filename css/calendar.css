@@ -1,0 +1,35 @@
+.cd {
+  white-space: nowrap;
+  color: #444;
+  text-align: right;
+}
+
+.cd.next {
+  color: #b33;
+  font-weight: bold;
+}
+
+.cy {
+ padding-right: 0.6em;
+ color: #666;
+}
+
+.cdt {
+  margin-left: 0.4em;
+  font-size: 13px;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.2s;
+  opacity: 0;
+}
+
+.cdt.show {
+  margin-top: 5px;
+  opacity: 1;
+  max-height: 100px;
+}
+
+tr {
+  vertical-align: top;
+}
+

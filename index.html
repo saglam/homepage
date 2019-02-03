@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mert Saglam</title>
+    <title>Mert Sağlam</title>
     <link rel="canonical" href="https://mert.saglam.id"/>
     <link href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" rel="stylesheet" type="text/css">
     <!-- build:css -->
     <link href="css/texne.css" rel="stylesheet" type="text/css"/>
     <link href="css/a.css" rel="stylesheet" type="text/css"/>
+    <link href="css/calendar.css" rel="stylesheet" type="text/css"/>
     <!-- endbuild -->
   </head>
   <body>
@@ -16,38 +17,54 @@
       <div style="float:right;height:200px;width:170px;border:1px solid;margin:0 0 10px 10px;"></div>
       <h1>Mert Saglam</h1>
       <div class=contact><b>saglam@uw.edu</b> • <a href="tel:+12069923374" class=tel>(206) 992-3374</a></div>
-        Final year graduate student (expected graduation January 2019) in the 
+        PhD candidate (expected graduation February 2019) in the 
         theory group at the <a href="//www.cs.washington.edu">University of Washington</a>
         advised by <a href="//homes.cs.washington.edu/~shayan/">Shayan Oveis Gharan</a>.
         <h4>Research Interests:</h4>
         <a href="//en.wikipedia.org/wiki/Theory_of_computation">Theory of computation</a>, <a href="//en.wikipedia.org/wiki/Communication_complexity">communication complexity</a>, and algorithms. 
         Information theory, Markov chains, probability, and stochastic processes. 
       <h2>Talks and events</h2>
-        <table>
+        <table id="cal">
           <tr>
-            <td class="dt">Tue, Oct 9</td><td class=dt>2018</td><td><a href="//www.irif.fr/~focs2018/finalprogram.html">FOCS 2018 (Paris) »</a></td>
+            <td class="cd">Tue, Oct 9</td><td class=cy>2018</td><td><a href="//www.irif.fr/~focs2018/finalprogram.html">FOCS 2018 (Paris) »</a></td>
           </tr>
           <tr>
-            <td class="dt">Wed, Nov 7</td><td class=dt>2018</td><td>Microsoft Research (Redmond)</td>
+            <td class="cd">Wed, Nov 7</td><td class=cy>2018</td><td>Microsoft Research (Redmond)</td>
           </tr>
           <tr>
-            <td class="dt">Wed, Nov 14</td><td class=dt>2018</td><td><a href="//www.cs.cmu.edu/~./theorylunch/pastSemesterIndices/Fall2018.html">CMU Theory Lunch (Pittsburgh) »</a></td>
+            <td class="cd">Wed, Nov 14</td>
+            <td class=cy>2018</td>
+            <td><a href="javascript:">CMU Theory Lunch (Pittsburgh) »</a>
+            <div class="cdt">12:00–13:00, NSH 3305<br>
+              <a href="//www.cs.cmu.edu/~./theorylunch/pastSemesterIndices/Fall2018.html" class=m>CMU Theory Lunch calendar</a></div></td>
           </tr>
           <tr>
-            <td class="dt next">Mon, Mar 11</td><td class="dt"></td><td><a href="//www.math.ias.edu/seminars">Institute for Advanced Study (Princeton) »</a></td>
+            <td class="cd next">Thu, Mar 7</td><td class=cy></td><td><a href="javascript:">University of Washington (Seattle) »</a><div class="cdt">10:00–12:00, Gates 371</div></td>
+          <tr>
+            <td class="cd">Mon, Mar 11</td><td class=cy></td>
+            <td><a href="javascript:">Institute for Advanced Study (Princeton) »</a><!--
+              --><div class="cdt">11:00–12:00, Simonyi Hall 101<br>
+              <a href="//www.math.ias.edu/seminars" class=m>IAS Seminar calendar</a></div>
+            </td>
           </tr>
           <tr>
-            <td class="dt">Wed, Mar 13</td><td class="dt"></td><td><a href="//archive.dimacs.rutgers.edu/seminars.html">Rutgers Theory Seminar (Piscataway) »</a></td>
+            <td class="cd">Wed, Mar 13</td>
+            <td class=cy></td>
+            <td><a href="javascript:">Rutgers Theory Seminar (Piscataway) »</a>
+            <div class=cdt>11:00–12:00<br>
+            <a href="//archive.dimacs.rutgers.edu/seminars.html" class=m>Rutgers / DIMACS calendar</a></div>
+            </td>
           </tr>
           <tr>
-            <td class="dt">Fri, Apr 19</td><td class="dt"></td><td><a href="http://www.cs.columbia.edu/theory/index.php?data=seminars">Columbia Theory Seminar (New York) »</a></td>
+            <td class="cd">Fri, Apr 19</td><td class=cy></td><td><a href="javascript:">Columbia Theory Seminar (New York) »</a><div class=cdt>13:00, CS Conference Room<br>
+            <a href="http://www.cs.columbia.edu/theory/theory-seminar-s19.html" class=m>Columbia Theory Seminar calendar</a></div></td>
           </tr>
         </table>
-      
+
       <h2>Publications</h2>
       <ul>
         <li>
-          <a class="paper noabs">Optimal protocols for the $k$-set intersection 
+          <a class="paper noabs">Optimal protocols for the <i>k</i>-set intersection 
           and equality problems</a><br/>
           (with <a href="//users.renyi.hu/~tardos/">Gábor Tardos</a>)<br/>
           Manuscript 2019
@@ -170,7 +187,8 @@
     </div>
     <!-- build:js -->
     <script src="js/texne.js"></script>
-    <script src="js/a.js"></script>
+    <script src="js/entry.js"></script>
+    <script src="js/calendar.js"></script>
     <!-- endbuild -->
   </body>
 </html>
