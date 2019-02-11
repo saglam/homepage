@@ -1,4 +1,13 @@
-local_deploy: build/index.html
+local_deploy: build/index.html build/papers
+
+.PHONY: papers
+
+build/papers: build/papers/ssd.pdf
+
+build/papers/ssd.pdf:
+	make -C papers/ssd
+	mkdir -p build/papers
+	cp papers/ssd/ssd.pdf build/papers
 
 build/css/all.css: css/texne.css css/popup.css css/entry.css css/calendar.css
 	mkdir -p build/css
@@ -6,7 +15,7 @@ build/css/all.css: css/texne.css css/popup.css css/entry.css css/calendar.css
 
 build/js/all.js: js/texne.js js/popup.js js/entry.js js/calendar.js \
                  references/main.bib \
-                 papers/heatdiscrete/changelog.txt papers/ssd/changelog.txt
+                 papers/*/changelog.txt
 	mkdir -p build/js
 	cp js/entry.js build/js/entry.js
 	./filljs.sh

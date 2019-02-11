@@ -30,6 +30,7 @@ function linkCalendar(/** Element */ calendar) {
       continue;
     }
     
+    renderElement(detail);
     calendarDetailElements.push(detail);
     link.onclick = getTogglerFor(detail);
   }

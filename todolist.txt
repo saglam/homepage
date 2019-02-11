@@ -4,7 +4,9 @@
 -- SSD v2
 -- Heatdiscrete animation
 
+-- Get good compression (precompressed, accept encoding sensitive) with Lambda@Edge + s3 
+
 -- Slides --DONE--
--- Compression --SORT OF-- No good (precompressed, accept header sensitive) compression possible with s3
+-- Compression --SORT OF-- s3 on the fly compression
 -- Redirect homes.cs.washington.edu/~saglam --DONE--
 

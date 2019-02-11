@@ -7,3 +7,6 @@
 [submodule "papers/heatdiscrete"]
 	path = papers/heatdiscrete
 	url = git@github.com:saglam/heatdiscrete
+[submodule "talks/hamming-slides"]
+	path = talks/hamming-slides
+	url = git@github.com:saglam/hamming-slides

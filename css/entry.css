@@ -54,22 +54,26 @@ b {
 
 h1 {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0.4em 0;
+  color: #444;
 }
 
 h2 {
   font-size: 17px;
-  margin: 20px 0 10px;
+  margin: 15px 0 7px;
   font-weight: bold;
+  color: #222;
 }
 
 h4 {
   font-weight: bold;
   margin: 0.7em 0 0.2em;
+  color: #222;
 }
 
 ul {
+  margin-top: 0.9em;
   margin-left: -1.7em;
   list-style-type:square;
 }
@@ -88,7 +92,8 @@ pre {
 }
 
 .ec {
-  margin-bottom: 0.7em;
+  margin-bottom: 0.6em;
+  color: #222;
 }
 
 .tel {
