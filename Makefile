@@ -36,7 +36,7 @@ build/index.html: build/js/all.js build/css/all.css index.html
 	html-minifier -c htmlminifier.conf build/tmp.html > build/index.html
 	rm -rf build/tmp.html
 	touch --date="2019-01-01" build/index.html
-	zopfli --force --best       --i20       ---keep build/index.html
+	zopfli --force --best       --i20       --keep  build/index.html
 	brotli --force --quality 11 --repeat 20 --input build/index.html --output build/index.html.br
 	touch build/index.html
 	touch build/index.html.br

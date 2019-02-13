@@ -192,7 +192,7 @@ function renderInline(texStr, leftAttach, rightAttach) {
           i++;
         }
         output += '<span class=msupsub><sup class=mssup>' + renderInline(sup, null, null) +
-                  '</sup><sub class=mssub>' + renderInline(sub, null, null) +
+                  '</sup><br><sub class=mssub>' + renderInline(sub, null, null) +
                   '</sub></span>';
       } else {
         output += '<sub class=msub>' + renderInline(sub, null, null) + '</sub>';
