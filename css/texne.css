@@ -2,8 +2,7 @@
 }
 
 .msup,
-.msub,
-.msupsub {
+.msub {
   font-size: 75%;
   margin: 0 0.05em;
   vertical-align: baseline;
@@ -19,19 +18,22 @@
 }
 
 .msupsub {
+  font-size: 75%;
+  margin: 0 0.05em;
+  vertical-align: middle;
   display: inline-block;
   position: relative;
-  bottom: -0.5em;
+  bottom: 0.2em;
 }
 
 .mssup {
   font-size: 100%;
-  vertical-align:top;
+  vertical-align: top;
 }
 
 .mssub {
   font-size:100%;
-  vertical-align:baseline;
+  vertical-align: baseline;
 }
 
 .mw {
