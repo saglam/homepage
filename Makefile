@@ -8,7 +8,7 @@ nocompile: Makefile font/Makefile $(ttfFonts)
 	python3 -m http.server 8000
 
 build/css/all.css: font/Makefile $(ttfFonts) $(woffFonts) $(woff2Fonts) \
-                   css/lato.css css/texne.css css/popup.css css/entry.css css/calendar.css
+	                 css/lato.css css/texne.css css/popup.css css/entry.css css/calendar.css
 	mkdir -p build/css
 	cp css/lato.css build/css/lato.css
 	./sh/fillcss.sh
@@ -16,8 +16,8 @@ build/css/all.css: font/Makefile $(ttfFonts) $(woffFonts) $(woff2Fonts) \
 	rm build/css/lato.css
 
 build/js/all.js: Makefile js/texne.js js/popup.js js/entry.js js/calendar.js \
-                 references/main.bib \
-                 papers/*/changelog.txt
+	               references/main.bib \
+	               papers/*/changelog.txt
 	mkdir -p build/js
 	cp js/entry.js build/js/entry.js
 	./sh/filljs.sh

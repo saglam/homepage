@@ -30,7 +30,7 @@ Featured in Oded Goldreich's choices, Property testing review.
 We answer a 1982 conjecture of Erdős and Simonovits about the growth of number of k-walks in a graph, which incidentally was studied even earlier by Blakley and Dixon in 1966. We prove this conjecture in a more general setup than the earlier treatment, furthermore, through a refinement and strengthening of this inequality, we resolve two related open questions in complexity theory: the communication complexity of the k-Hamming distance is Ω(k log k) and that consequently any property tester for k-linearity requires Ω(k log k) queries.
 
 Suppose some initial heat configuration u: Ω → ℝ+ over a discrete space Ω is given. The configuration evolves according to the map z ↦ Sz in discrete time steps t = 0, 1, … for some symmetric stochastic matrix S: Ω × Ω → ℝ+ and we measure the amount of heat contained in a certain region v over time: mt = ⟨v, Stu⟩ denotes our measurement at time t, where ‖u‖2 = ‖v‖2 = 1 for normalization. What can we say about {mt}∞
-t = 0 that holds for any S, u, v ?
+t = 0 that holds true for any S, u, v ?
 
 
 (with Gábor Tardos)
