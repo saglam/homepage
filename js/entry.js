@@ -43,7 +43,7 @@ function linkPaper(paper) {
     } else if (elem.className.slice(0, 3) == "abs") {
       absDiv = elem;
     } else if (elem.className == "v") {
-      let id = elem.dataset.id;
+      let id = elem.dataset["id"];
       if (!id) continue;
       elem.onclick = (
         /**
@@ -67,7 +67,7 @@ function linkPaper(paper) {
             showText(bibMap[bibId]);
           }
         }
-      )(elem.dataset.id);
+      )(elem.dataset["id"]);
     }
   }
   if (absDiv) {

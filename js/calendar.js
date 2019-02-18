@@ -29,10 +29,34 @@ function linkCalendar(/** Element */ calendar) {
     if (detail == null) {
       continue;
     }
-    
+
     renderElement(detail);
     calendarDetailElements.push(detail);
     link.onclick = getTogglerFor(detail);
+
+    for (let elem = detail.firstElementChild; elem != null; elem = elem.nextElementSibling) {
+      /**
+       * @type {string}
+       */
+      let id = elem.dataset["talk"];
+      if ("heatdiscrete-cmu" == id) {
+        elem.onclick = function() {
+          let talk = window.open("talks/heatdiscrete-cmu/", "_blank", 'width=960,height=700');
+          if (window.focus) {
+            talk.focus();
+          }
+          return false;
+        }
+      } else if ("hamming-ias" == id) {
+        elem.onclick = function() {
+          let talk = window.open("talks/hamming-ias/", "_blank", 'width=1200,height=675');
+          if (window.focus) {
+            talk.focus();
+          }
+          return false;
+        }
+      }
+    }
   }
 }
 

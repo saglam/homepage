@@ -10,23 +10,23 @@ woff2Fonts = $(woffFonts:=2)
 
 font/lt400.ttf: $(fontSource)/Lato-Regular3.ttf
 	pyftsubset $< $(pyftsubsetParams) \
-        --text-file=$(subst ttf,txt,$(subst lt,specimen,$@)) \
-        --output-file=$@
+	      --text-file=$(subst ttf,txt,$(subst lt,specimen,$@)) \
+	      --output-file=$@
 
 font/lt400i.ttf: $(fontSource)/Lato-Italic.ttf
 	pyftsubset $< $(pyftsubsetParams) \
-        --text-file=$(subst ttf,txt,$(subst lt,specimen,$@)) \
-        --output-file=$@
+	      --text-file=$(subst ttf,txt,$(subst lt,specimen,$@)) \
+	      --output-file=$@
 
 font/lt700.ttf: $(fontSource)/Lato-Bold.ttf
 	pyftsubset $< $(pyftsubsetParams) \
-        --text-file=$(subst ttf,txt,$(subst lt,specimen,$@)) \
-        --output-file=$@
+	      --text-file=$(subst ttf,txt,$(subst lt,specimen,$@)) \
+	      --output-file=$@
 
 font/lt700i.ttf: $(fontSource)/Lato-BoldItalic.ttf
 	pyftsubset $< $(pyftsubsetParams) \
-        --text-file=$(subst ttf,txt,$(subst lt,specimen,$@)) \
-        --output-file=$@
+	      --text-file=$(subst ttf,txt,$(subst lt,specimen,$@)) \
+	      --output-file=$@
 
 font/%.woff: font/%.ttf
 	sfnt2woff-zopfli -n 20 $<
