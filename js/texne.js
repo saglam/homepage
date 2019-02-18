@@ -36,34 +36,42 @@ var Spaces = {
  * @type {Object<string, Array<Atom, string>>}
  */
 var Substitute = {
-  "Theta" : [Atom.Ord  , "<span class=mtht>Θ</span>"],
+  // Atom.Ord
+  "Theta" : [Atom.Ord  , "Θ"],
   "theta" : [Atom.Ord  , "θ"],
   "Omega" : [Atom.Ord  , "Ω"],
   "omega" : [Atom.Ord  , "ω"],
-  "in"    : [Atom.Rel  , "<span class=min>ϵ</span>"],
-  "log"   : [Atom.Op   , null],
-  "colon" : [Atom.Punct, ":"],
   "reals" : [Atom.Ord  , "ℝ"],
-  "times" : [Atom.Bin  , "×"],
-  "to"    : [Atom.Rel  , "<span class=mto>→</span>"],
-  "mapsto": [Atom.Rel  , "<span class=mmt>↦</span>"],
-  "ldots" : [Atom.Inner, "…"],
-  "langle": [Atom.Open , "<span class=mal>⟨</span>"],
-  "rangle": [Atom.Close, "<span class=mar>⟩</span>"],
-  "lVert" : [Atom.Open , "∥"],
-  "rVert" : [Atom.Close, "∥"],
   "infty" : [Atom.Ord  , "∞"],
   "\\|"   : [Atom.Ord  , "∥"],
-  "\\{"   : [Atom.Open , "<span class=mcl>{</span>"],
-  "\\}"   : [Atom.Close, "<span class=mcr>}</span>"],
-  "*"     : [Atom.Op   , '<span class=masx>*</span>'],
-  "("     : [Atom.Open , '<span class=mpl>(</span>'],
-  ")"     : [Atom.Close, '<span class=mpr>)</span>'],
-  "["     : [Atom.Open , '<span class=msl>[</span>'],
-  "]"     : [Atom.Close, '<span class=msr>]</span>'],
+  // Atom.Op
+  "log"   : [Atom.Op   , null],
+  // Atom.Bin
+  "times" : [Atom.Bin  , "×"],
+  "*"     : [Atom.Bin  , '<span class=masx>*</span>'],
+  "+"     : [Atom.Bin  , '+'],
+  // Atom.Rel
   "="     : [Atom.Rel  , '<span class=meq>=</span>'],
-  "+"     : [Atom.Op   , '+'],
-  ","     : [Atom.Punct, ',']
+  "to"    : [Atom.Rel  , "<span class=mto>→</span>"],
+  "mapsto": [Atom.Rel  , "<span class=mmt>↦</span>"],
+  "in"    : [Atom.Rel  , "<span class=min>∈</span>"],
+  // Atom.Open
+  "langle": [Atom.Open , "<span class=mal>⟨</span>"],
+  "lVert" : [Atom.Open , "∥"],
+  "\\{"   : [Atom.Open , "<span class=mcl>{</span>"],
+  "("     : [Atom.Open , '<span class=mpl>(</span>'],
+  "["     : [Atom.Open , '<span class=msl>[</span>'],
+  // Atom.Close
+  "rangle": [Atom.Close, "<span class=mar>⟩</span>"],
+  "rVert" : [Atom.Close, "∥"],
+  "\\}"   : [Atom.Close, "<span class=mcr>}</span>"],
+  ")"     : [Atom.Close, '<span class=mpr>)</span>'],
+  "]"     : [Atom.Close, '<span class=msr>]</span>'],
+  // Atom.Punct
+  ","     : [Atom.Punct, ','],
+  "colon" : [Atom.Punct, ":"],
+  // Atom.Inner
+  "ldots" : [Atom.Inner, "…"],
 };
 
 /**
@@ -268,6 +276,4 @@ function renderElement(elem) {
   }
   elem.innerHTML = parts.join("");
 }
-
-// document.styleSheets[0].insertRule(".texne-css{}", 0);
 

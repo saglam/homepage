@@ -1,11 +1,10 @@
--- Full Lato Regular
 -- Heatdiscrete v2
-
 -- SSD v2
 -- Heatdiscrete animation
-
+-- Auto specimen extraction when needed. Look into HTML parsers
 -- Get good compression (precompressed, accept encoding sensitive) with Lambda@Edge + s3 
 
+-- Full Lato Regular --DONE--
 -- Slides --DONE--
 -- Compression --SORT OF-- s3 on the fly compression
 -- Redirect homes.cs.washington.edu/~saglam --DONE--

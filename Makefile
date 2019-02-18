@@ -9,16 +9,19 @@ build/papers/ssd.pdf:
 	mkdir -p build/papers
 	cp papers/ssd/ssd.pdf build/papers
 
-build/css/all.css: css/texne.css css/popup.css css/entry.css css/calendar.css
+build/css/all.css: css/lato.css css/texne.css css/popup.css css/entry.css css/calendar.css
 	mkdir -p build/css
-	cat $^ | csso --output $@
+	cp css/lato.css build/css/lato.css
+	./sh/fillcss.sh
+	cat build/css/lato.css css/texne.css css/popup.css css/entry.css css/calendar.css | csso --output $@
+	rm build/css/lato.css
 
 build/js/all.js: js/texne.js js/popup.js js/entry.js js/calendar.js \
                  references/main.bib \
                  papers/*/changelog.txt
 	mkdir -p build/js
 	cp js/entry.js build/js/entry.js
-	./filljs.sh
+	./sh/filljs.sh
 	java -jar ../code/bluck-out/java/compiler.jar -W VERBOSE -O ADVANCED \
 	     --language_out ECMASCRIPT5_STRICT --charset UTF-8 \
 	     --js js/texne.js js/popup.js build/js/entry.js js/calendar.js \
@@ -26,7 +29,7 @@ build/js/all.js: js/texne.js js/popup.js js/entry.js js/calendar.js \
 	rm -f build/js/entry.js
 
 build/index.html: build/js/all.js build/css/all.css index.html
-	./fillhtml.sh
+	./sh/fillhtml.sh
 
 aws_deploy: local_deploy
 	aws s3 sync --metadata-directive REPLACE \
@@ -46,10 +49,6 @@ aws_deploy: local_deploy
 	aws s3 cp   --acl public-read \
 	            --content-type text/html build/index.html s3://mert.saglam.id/index.html
 	aws cloudfront create-invalidation --distribution-id E18VDHOME7TQW8 --paths '/index.html'
-
-aws_deploy_preso:
-	aws s3 sync --acl public-read ../presentations/heatdiscrete s3://mert.saglam.id/slides/heatdiscrete
-	aws cloudfront create-invalidation --distribution-id E18VDHOME7TQW8 --paths '/slides/heatdiscrete/*'
 
 clean:
 	rm -rf build

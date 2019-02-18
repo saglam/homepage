@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'lt';
-  src: url('../font/lt400.woff') format('woff');
+  src: url('../font/lt400.ttf') format('truetype');
 
   font-weight: 400;
   font-style: normal;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'lt';
-  src: url('../font/lt400i.woff') format('woff');
+  src: url('../font/lt400i.ttf') format('truetype');
 
   font-weight: 400;
   font-style: italic;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'lt';
-  src: url('../font/lt700.woff') format('woff');
+  src: url('../font/lt700.ttf') format('truetype');
 
   font-weight: 700;
   font-style: normal;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: 'lt';
-  src: url('../font/lt700i.woff') format('woff');
+  src: url('../font/lt700i.ttf') format('truetype');
 
   font-weight: 700;
   font-style: italic;

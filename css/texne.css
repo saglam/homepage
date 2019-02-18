@@ -41,14 +41,6 @@
   line-height: 1;
 }
 
-.mtht {
-  font-size: 105%;
-  transform:scale(0.92,1); 
-  display:inline-block;
-  position: relative;
-  top: 0.04em;
-}
-
 .meq {
   font-size: 118%;
   transform:scale(1.45,1); 
@@ -58,10 +50,8 @@
 }
 
 .mto {
-  transform:scale(1.8); 
-  display:inline-block;
-  position: relative;
-  top: -0.1em;
+  display: inline-block;
+  transform:scale(1.2,1); 
 }
 
 .min {
@@ -94,10 +84,10 @@
 }
 
 .mpl {
-  margin-right: 0.02em;
+  margin: 0 0.02em;
 }
 
 .mpr {
-  margin-left: 0.02em;
+  margin: 0 0.02em;
 }
 
