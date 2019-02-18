@@ -1,0 +1,58 @@
+12:30, Building 99, Room 2800
+12:00–13:00, NSH 3305
+CMU Theory Lunch calendar
+Near log-convexity of measured heat in discrete time and consequences
+10:00–12:00, Gates Center 371
+11:00–12:00, Simonyi Hall 101
+IAS Seminar calendar
+An optimal lower bound for the k-Hamming distance problem
+11:00–12:00, TBA
+Rutgers / DIMACS calendar
+13:00, CS Conference Room
+Columbia Theory Seminar calendar
+PhD candidate (expected graduation February 2019) in the theory group at the University of Washington advised by Shayan Oveis Gharan.
+Tue, Oct 9	2018	FOCS 2018 (Paris) »
+Wed, Nov 7	2018	Microsoft Research (Redmond) »
+Wed, Nov 14	2018	CMU Theory Lunch (Pittsburgh) »
+▪
+
+Thu, Mar 7		University of Washington (Seattle) »
+Mon, Mar 11		Institute for Advanced Study (Princeton) »
+11:00–12:00, Simonyi Hall 101
+IAS Seminar calendar
+An optimal lower bound for the k-Hamming distance problem
+Wed, Mar 13		Rutgers Theory Seminar (Piscataway) »
+Fri, Apr 19		Columbia Theory Seminar (New York) »
+(with Gábor Tardos)
+Manuscript 2019
+59th Annual Symposium on Foundations of Computer Science (FOCS 2018)
+Featured in Oded Goldreich's choices, Property testing review.
+We answer a 1982 conjecture of Erdős and Simonovits about the growth of number of k-walks in a graph, which incidentally was studied even earlier by Blakley and Dixon in 1966. We prove this conjecture in a more general setup than the earlier treatment, furthermore, through a refinement and strengthening of this inequality, we resolve two related open questions in complexity theory: the communication complexity of the k-Hamming distance is Ω(k log k) and that consequently any property tester for k-linearity requires Ω(k log k) queries.
+
+Suppose some initial heat configuration u: Ω → ℝ+ over a discrete space Ω is given. The configuration evolves according to the map z ↦ Sz in discrete time steps t = 0, 1, … for some symmetric stochastic matrix S: Ω × Ω → ℝ+ and we measure the amount of heat contained in a certain region v over time: mt = ⟨v, Stu⟩ denotes our measurement at time t, where ‖u‖2 = ‖v‖2 = 1 for normalization. What can we say about {mt}∞
+t = 0 that holds for any S, u, v ?
+
+
+(with Gábor Tardos)
+54th Annual Symposium on Foundations of Computer Science (FOCS 2013)
+[pdf] [abstract] [arXiv] [slides] [bib]
+We show that the r-round communication complexity of the k-disjointness problem is precisely Θ(k log(r) k) bits. Setting r = log* k, our upper bound gives an O(k)-bits, log* k-rounds protocol with error probability exponentially small in k. This improves the best previous protocol due to Håstad and Wigderson, which ran in O(log k) rounds and erred with constant probability.
+
+Our lower bound applies even to the simpler task of computing the OR of k independent instances of equality. An important aspect of our work is that the lower bound we get is super-linear in k, even though a single instance of equality can be solved with O(1) bits and constant error probability.
+
+
+
+(with Hossein Jowhari and Gábor Tardos)
+30th Symposium on Principles of Database Systems (PODS 2011)
+[pdf] [abstract] [arXiv] [slides] [bib]
+We present Lp sampling algorithms using O(log2 n) bits of space for p ∈ [0, 2) in the streaming model and show that Ω(log2 n) space is required by any such algorithm.
+
+As an application, we present an O(log2 n) space algorithm for finding a duplicate in a stream of length n + 1 over the alphabet [n], improving on the previous O(log3 n) bound due to Gopalan and Radhakrishnan.
+
+
+(with Funda Ergün and Hossein Jowhari)
+14th Intl. Workshop on Randomization and Computation (RANDOM 2010)
+[pdf] [abstract] [bib]
+We give an O(log2 n) space one pass streaming algorithm that finds the period of a stream, provided the stream is periodic. At the core of this algorithm is a new one pass O(log n log m) space pattern matching algorithm for finding occurrences of a length m pattern in a text of size n. This algorithm uses similar ideas to Porat and Porat’s algorithm in FOCS 2009 but it does not need an offline pre-processing stage and is simpler.
+
+In the second part, we study distance to p-periodicity under the Hamming metric and provide space efficient approximation algorithms.

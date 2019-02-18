@@ -1,0 +1,9 @@
+*.ttf
+*.woff
+*.woff2
+*.orig
+*/*
+!Lato2OFL/Lato-Regular3.ttf
+!Lato2OFL/Lato-Italic.ttf
+!Lato2OFL/Lato-Bold.ttf
+!Lato2OFL/Lato-BoldItalic.ttf

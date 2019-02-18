@@ -1,0 +1,12 @@
+Mert Sağlam
+saglam@uw.edu • (206) 992-3374
+Research Interests:
+Upcoming and recent talks
+Publications
+▪ Optimal protocols for the k-set intersection and equality problems
+Near log-convexity of measured heat in (discrete) time and consequences
+On the communication complexity of sparse set disjointness and exists-equal problems
+Tight Bounds for Data Stream Algorithms and Communication Problems
+Tight Bounds for Lp Samplers, Finding Duplicates in Streams, and Related Problems
+Periodicity in Streams
+

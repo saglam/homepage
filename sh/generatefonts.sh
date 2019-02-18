@@ -2,7 +2,7 @@
 
 declare -A typeToName
 
-typeToName["400"]="Lato-Regular.ttf"
+typeToName["400"]="Lato-Regular3.ttf"
 typeToName["400i"]="Lato-Italic.ttf"
 typeToName["700"]="Lato-Bold.ttf"
 typeToName["700i"]="Lato-BoldItalic.ttf"
@@ -19,18 +19,12 @@ then
   done  
 else
   for type in $types; do
-    echo -e "${type}\n"
-    cat font/specimen${type}.txt | while read -n1 c; do
-      printf "U+%04X\n" \'$c
-    done | sort -u | tail -n+2 > "tmp${type}.txt"
-
     echo "Subsetting ${type} font/${sourceDir}/${typeToName[$type]} "
     pyftsubset font/${sourceDir}/${typeToName[$type]} \
-        --unicodes-file=tmp${type}.txt \
+        --text-file=font/specimen${type}.txt \
         --output-file=font/lt${type}.ttf \
         --no-recommended-glyphs \
         --hinting \
-        --verbose \
         --canonical-order \
         --recalc-bounds
   done

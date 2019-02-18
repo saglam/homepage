@@ -43,7 +43,7 @@ var Substitute = {
   "omega" : [Atom.Ord  , "ω"],
   "reals" : [Atom.Ord  , "ℝ"],
   "infty" : [Atom.Ord  , "∞"],
-  "\\|"   : [Atom.Ord  , "∥"],
+  "\\|"   : [Atom.Ord  , "‖"],
   // Atom.Op
   "log"   : [Atom.Op   , null],
   // Atom.Bin
@@ -57,13 +57,13 @@ var Substitute = {
   "in"    : [Atom.Rel  , "<span class=min>∈</span>"],
   // Atom.Open
   "langle": [Atom.Open , "<span class=mal>⟨</span>"],
-  "lVert" : [Atom.Open , "∥"],
+  "lVert" : [Atom.Open , "‖"],
   "\\{"   : [Atom.Open , "<span class=mcl>{</span>"],
   "("     : [Atom.Open , '<span class=mpl>(</span>'],
   "["     : [Atom.Open , '<span class=msl>[</span>'],
   // Atom.Close
   "rangle": [Atom.Close, "<span class=mar>⟩</span>"],
-  "rVert" : [Atom.Close, "∥"],
+  "rVert" : [Atom.Close, "‖"],
   "\\}"   : [Atom.Close, "<span class=mcr>}</span>"],
   ")"     : [Atom.Close, '<span class=mpr>)</span>'],
   "]"     : [Atom.Close, '<span class=msr>]</span>'],
