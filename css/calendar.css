@@ -29,6 +29,10 @@
   max-height: 150px;
 }
 
+.cdt.show.masked {
+  opacity: 0.2;
+}
+
 tr {
   vertical-align: top;
 }

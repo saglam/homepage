@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mert Sağlam</title>
     <link rel="canonical" href="https://mert.saglam.id"/>
+    <link rel="preload" crossorigin href="/font/lt400.ttf" as="font"/>
+    <link rel="preload" crossorigin href="/font/lt400i.ttf" as="font"/>
+    <link rel="preload" crossorigin href="/font/lt700.ttf" as="font"/>
+    <link rel="preload" crossorigin href="/font/lt700i.ttf" as="font"/>
     <!-- build:css -->
     <link href="css/lato-ttf.css" rel="stylesheet" type="text/css"/>
     <link href="css/texne.css" rel="stylesheet" type="text/css"/>
@@ -19,10 +23,13 @@
       <h1>Mert Sağlam</h1>
       <h3>saglam@uw.edu • <a href="tel:+12069923374" class=et>(206) 992-3374</a></h3>
         PhD candidate (expected graduation February 2019) in the 
-        theory group at the <a href="//www.cs.washington.edu" target="_blank">University of Washington</a>
-        advised by <a href="//homes.cs.washington.edu/~shayan/" target="_blank">Shayan Oveis Gharan</a>.
+        theory group at the <a href="//www.cs.washington.edu" target="_blank" title="Paul G. Allen School of Computer Science & Engineering (new tab)">University of Washington</a>
+        advised by <a href="//homes.cs.washington.edu/~shayan/" target="_blank" title="Shayan's homepage (new tab)">Shayan Oveis Gharan</a>.
         <h4>Research Interests:</h4>
-        <a href="//en.wikipedia.org/wiki/Theory_of_computation" target="_blank">Theory of computation</a>, <a href="//en.wikipedia.org/wiki/Communication_complexity" target="_blank">communication complexity</a>, and algorithms. 
+        <a href="//en.wikipedia.org/wiki/Theory_of_computation"
+            target="_blank" title="See the Wikipedia article (new tab)">Theory of computation</a>,
+        <a href="//en.wikipedia.org/wiki/Communication_complexity"
+            target="_blank" title="See the Wikipedia article (new tab)">communication complexity</a>, and algorithms. 
         Information theory, Markov chains, probability, and stochastic processes. 
       <h2>Upcoming and recent talks</h2>
         <table id="cal">
@@ -56,10 +63,10 @@
           <tr>
             <td class="cd">Mon, Mar 11</td><td class=cy></td>
             <td><a href="javascript:">Institute for Advanced Study (Princeton) »</a><!--
-              --><div class="cdt show">11:00–12:00, Simonyi Hall 101<br>
+              --><div class="cdt show masked">11:00–12:00, Simonyi Hall 101<br>
               <a href="//www.math.ias.edu/seminars" class=k>IAS Seminar calendar</a><br>
               <a class=l href="javascript:" data-talk="hamming-ias">An optimal lower bound for the 
-                $k$-Hamming distance problem</a></div>
+                <i>k</i>-Hamming distance problem</a></div>
             </td>
           </tr>
           <tr>
@@ -95,11 +102,11 @@
           <a class="l" href="javascript:" data-id="Saglam2018">[bib]</a><br/>
           Featured in <a class=k href="http://www.wisdom.weizmann.ac.il/~oded/my-choice.html#c253">Oded Goldreich's choices</a>, 
           <a class=k href="//ptreview.sublinear.info/?p=1030">Property testing review</a>.
-          <div class="abs">
+          <div class="abs show">
             <p>We answer a
-            <a href="//doi.org/10.1007/BF02579234" target="_blank">1982 conjecture</a> of 
-            <a href="//en.wikipedia.org/wiki/Paul_Erdős" target="_blank">Erdős</a> and 
-            <a href="//en.wikipedia.org/wiki/Miklós Simonovits" target="_blank">Simonovits</a>
+            <a href="//users.renyi.hu/~miki/CompactnessCCA.pdf" title="Paper this conjecture was made from Simonovits' homepage">1982 conjecture</a> of 
+            <a href="//en.wikipedia.org/wiki/Paul_Erdős" target="_blank" title="Wikipedia page of Paul Erdős (new tab)">Erdős</a> and 
+            <a href="//en.wikipedia.org/wiki/Miklós Simonovits" target="_blank" title="Wikipedia page of Miklós Simonovits (new tab)">Simonovits</a>
             about the growth of number of $k$-walks in a graph, which incidentally 
             was studied even earlier by Blakley and Dixon in 1966. 
             We prove this conjecture in a more general setup than the earlier treatment,
@@ -110,7 +117,7 @@
 
             --><p>Suppose some initial heat configuration $u\colon\Omega\to\reals_+$ over a 
             discrete space $\Omega$ is given. The configuration evolves according to 
-            the map $z\mapsto S z$ in discrete time steps $t=0,1,\ldots$ for some symmetric 
+            the map $w\mapsto S w$ in discrete time steps $t=0,1,\ldots$ for some symmetric 
             stochastic matrix $S\colon\Omega\times\Omega\to\reals_+$ and we measure the amount 
             of heat contained in a certain region $v$ over time: $m_t=\langle v,S^tu\rangle$
             denotes our measurement at time $t$,

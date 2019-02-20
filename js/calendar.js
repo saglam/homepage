@@ -2,12 +2,22 @@
  * @fileoverview Calendar module
  * Reserves the css c* namespace
  */
- 
+
+/**
+ * @type {Array<Element>}
+ */
+let CalendarDetailElements = [];
+
+/**
+ * @type {Element}
+ */
+let ShowDetail;
+
 function getTogglerFor(/** @type {Element} */ detailElement) {
   return function() {
-    for (let i = 0, len = calendarDetailElements.length; i < len; ++i) {
-      if (calendarDetailElements[i] != detailElement) {
-        calendarDetailElements[i].classList.remove("show");
+    for (let i = 0, len = CalendarDetailElements.length; i < len; ++i) {
+      if (CalendarDetailElements[i] !== detailElement) {
+        CalendarDetailElements[i].classList.remove("show");
       }
     }
     detailElement.classList.toggle("show");
@@ -31,10 +41,10 @@ function linkCalendar(/** Element */ calendar) {
     }
 
     renderElement(detail);
-    calendarDetailElements.push(detail);
+    CalendarDetailElements.push(detail);
     link.onclick = getTogglerFor(detail);
 
-    for (let elem = detail.firstElementChild; elem != null; elem = elem.nextElementSibling) {
+    for (let elem = detail.firstElementChild; elem !== null; elem = elem.nextElementSibling) {
       /**
        * @type {string}
        */
@@ -48,6 +58,7 @@ function linkCalendar(/** Element */ calendar) {
           return false;
         }
       } else if ("hamming-ias" == id) {
+        ShowDetail = detail;
         elem.onclick = function() {
           let talk = window.open("talks/hamming-ias/", "_blank", 'width=1200,height=675');
           if (window.focus) {
@@ -60,9 +71,10 @@ function linkCalendar(/** Element */ calendar) {
   }
 }
 
-/**
- * @type {Array<Element>}
- */
-let calendarDetailElements = [];
 linkCalendar(document.getElementById("cal"));
+if (ShowDetail) {
+  window.onload = function() {
+    ShowDetail.classList.remove("masked");
+  }
+}
 

@@ -27,6 +27,12 @@ for task in $Tasks; do
   touch --date="${constDate}" ${dest}.gz
 done
 
+Fonts="400i 400 700i 700"
+for font in $Fonts; do
+  hash=$(sha1sum -b "font/lt${font}.woff2" | cut -c1-40 | base64 | cut -c3-8)
+  perl -0777 -i -pe "s#font/lt${font}.ttf#font/${hash}.woff2#" build/tmp.html
+done
+
 html-minifier -c htmlminifier.conf build/tmp.html > build/index.html
 rm -rf build/tmp.html
 touch --date="${constDate}" build/index.html
