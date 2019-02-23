@@ -68,6 +68,10 @@ function linkPaper(paper) {
           }
         }
       )(elem.dataset["id"]);
+    } else if (elem.dataset["talk"]) {
+      if (elem.dataset["talk"] == 'hamming-ias') {
+        elem.onclick = HammingLauncher;
+      }
     }
   }
   if (absDiv) {

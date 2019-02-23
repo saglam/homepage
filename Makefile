@@ -16,7 +16,7 @@ build/css/all.css: font/Makefile $(ttfFonts) $(woffFonts) $(woff2Fonts) \
 	cat build/css/lato.css css/texne.css css/popup.css css/entry.css css/calendar.css | csso --output $@
 	rm build/css/lato.css
 
-build/js/all.js: js/texne.js js/popup.js js/entry.js js/calendar.js \
+build/js/all.js: js/texne.js js/popup.js js/calendar.js js/entry.js \
                  references/main.bib \
                  papers/*/changelog.txt
 	mkdir -p build/js

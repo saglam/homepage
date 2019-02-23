@@ -2,7 +2,6 @@
 
 constDate="$(date +%Y)-01-01"
 
-declare -A TaskSourceFile
 declare -A TaskReplaceString
 
 Tasks="js css"

@@ -24,6 +24,14 @@ function getTogglerFor(/** @type {Element} */ detailElement) {
   }
 }
 
+function HammingLauncher()  {
+  let talk = window.open("talks/hamming-ias/", "_blank", 'width=1200,height=675');
+  if (window.focus) {
+    talk.focus();
+  }
+  return false;
+}
+
 function linkCalendar(/** Element */ calendar) {
   for (let i = 0; i < calendar.rows.length; ++i) {
     /** @type {Element} */
@@ -59,13 +67,7 @@ function linkCalendar(/** Element */ calendar) {
         }
       } else if ("hamming-ias" == id) {
         ShowDetail = detail;
-        elem.onclick = function() {
-          let talk = window.open("talks/hamming-ias/", "_blank", 'width=1200,height=675');
-          if (window.focus) {
-            talk.focus();
-          }
-          return false;
-        }
+        elem.onclick = HammingLauncher;
       }
     }
   }
