@@ -1,39 +1,59 @@
 #!/bin/bash
 
-fontForms="woff2 woff ttf"
-for fontForm in $fontForms; do
-  aws s3 sync --metadata-directive REPLACE \
-              --expires 2034-01-01T00:00:00Z \
-              --acl public-read \
-              --content-type font/${fontForm} \
-              --cache-control max-age=29030400,public \
-              --exclude="*" \
-              --include="*.${fontForm}" \
-              build/font s3://mert.saglam.id/font
+Compression="none gz br"
+
+declare -A CompressionToEncoding
+declare -A CompressionToExtension
+
+CompressionToEncoding["none"]=""
+CompressionToEncoding["gz"]="--content-encoding gzip"
+CompressionToEncoding["br"]="--content-encoding br"
+
+CompressionToExtension["none"]=""
+CompressionToExtension["gz"]=".gz"
+CompressionToExtension["br"]=".br"
+
+
+Tasks="css js woff2 woff ttf"
+
+declare -A TaskToContentType
+declare -A TaskToDirectory
+
+TaskToContentType["js"]="application/javascript"
+TaskToContentType["css"]="text/css"
+TaskToContentType["woff2"]="font/woff2"
+TaskToContentType["woff"]="font/woff"
+TaskToContentType["ttf"]="font/ttf"
+
+TaskToDirectory["js"]="js"
+TaskToDirectory["css"]="css"
+TaskToDirectory["woff2"]="font"
+TaskToDirectory["woff"]="font"
+TaskToDirectory["ttf"]="font"
+
+for task in $Tasks; do
+  for comp in $Compression; do
+    aws s3 sync --metadata-directive REPLACE \
+                --expires 2034-01-01T00:00:00Z \
+                --acl public-read \
+                --content-type "${TaskToContentType[$task]}" ${CompressionToEncoding[$comp]} \
+                --cache-control "max-age=29030400, public" \
+                --exclude="*" \
+                --include="*.${task}${CompressionToExtension[$comp]}" \
+                --exclude="all.${task}${CompressionToExtension[$comp]}" \
+                build/${TaskToDirectory[$task]} \
+                s3://mert.saglam.id/${TaskToDirectory[$task]}
+  done
 done
 
-aws s3 sync --metadata-directive REPLACE \
-            --expires 2034-01-01T00:00:00Z \
-            --acl public-read \
-            --content-type application/javascript \
-            --cache-control max-age=29030400,public \
-            --exclude="*" \
-            --include="*.js" \
-            --exclude="all.js" \
-            build/js s3://mert.saglam.id/js
+for comp in $Compression; do
+  aws s3 cp   --metadata-directive REPLACE \
+              --acl public-read \
+              --cache-control "no-cache" ${CompressionToEncoding[$comp]} \
+              --content-type "text/html; charset=utf-8" \
+              build/index.html${CompressionToExtension[$comp]} \
+              s3://mert.saglam.id/index.html${CompressionToExtension[$comp]}
+done
 
-aws s3 sync --metadata-directive REPLACE \
-            --expires 2034-01-01T00:00:00Z \
-            --acl public-read \
-            --content-type text/css \
-            --cache-control max-age=29030400,public \
-            --exclude="*" \
-            --include="*.css" \
-            --exclude="all.css" \
-            build/css s3://mert.saglam.id/css
-
-aws s3 cp   --acl public-read \
-            --content-type text/html build/index.html s3://mert.saglam.id/index.html
-
-aws cloudfront create-invalidation --distribution-id E18VDHOME7TQW8 --paths '/index.html'
+aws cloudfront create-invalidation --distribution-id E18VDHOME7TQW8 --paths "/index.html /index.html.gz /index.html.br"
 

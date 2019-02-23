@@ -94,19 +94,19 @@ pre {
 .abs {
   padding: 0 10% 0 4%;
   font-size: 13px;
-  max-height: 0;
   overflow: hidden;
-  transition: 0.2s;
+  transition: max-height 0.2s, opacity 0.3s;
+  max-height: 0;
   opacity: 0;
+}
+
+.abs.show {
+  max-height: 400px;
+  opacity: 1;
 }
 
 .abs .mw {
   display: inline-block;
-}
-
-.abs.show {
-  opacity: 1;
-  max-height: 400px;
 }
 
 /* Entry:Paper */

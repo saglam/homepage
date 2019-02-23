@@ -1,14 +1,12 @@
 run: local_deploy
 	cd build; python3 -m http.server 8000; cd ..;
 
+include font/Makefile
+
 runnocompile: Makefile font/Makefile $(ttfFonts)
 	python3 -m http.server 8000
 
-local_deploy: build/index.html
-
-.PHONY: local_deploy
-
-include font/Makefile
+local_deploy: build/index.html build/index.html.gz build/index.html.br
 
 build/css/all.css: font/Makefile $(ttfFonts) $(woffFonts) $(woff2Fonts) \
                    css/lato.css css/texne.css css/popup.css css/entry.css css/calendar.css
@@ -30,8 +28,15 @@ build/js/all.js: js/texne.js js/popup.js js/entry.js js/calendar.js \
 	     | uglifyjs -m -o $@
 	rm -f build/js/entry.js
 
-build/index.html: font/Makefile $(woff2Fonts) build/js/all.js build/css/all.css index.html
+build/index.html: font/Makefile $(woff2Fonts) \
+                  build/js/all.js build/js/all.js.gz build/js/all.js.br \
+                  build/css/all.css build/css/all.css.gz build/css/all.css.br \
+                  index.html
+	mkdir -p build
+	cp index.html build/tmp.html
 	./sh/fillhtml.sh
+	html-minifier -c htmlminifier.conf build/tmp.html > build/index.html
+	rm build/tmp.html
 
 aws_deploy: local_deploy
 	./sh/aws_deploy.sh
@@ -41,4 +46,20 @@ clean: cleanFont
 
 cleanFont:
 	rm -f font/*.woff font/*.woff2 font/*.ttf
+
+.PHONY: local_deploy aws_deploy clean cleanFont
+
+%.gz: %
+	cp $< $@.tmp
+	touch $@.tmp --date="2019-01-01"
+	zopfli --force --best --i20 $@.tmp
+	mv $@.tmp.gz $<.gz
+	rm -f $@.tmp
+
+%.br: %
+	cp $< $@.tmp
+	touch $@.tmp --date="2019-01-01"
+	brotli --force --quality 11 --repeat 20 --input $@.tmp --output $@
+	touch $@
+	rm $@.tmp
 

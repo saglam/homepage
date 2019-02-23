@@ -6,25 +6,22 @@ declare -A TaskSourceFile
 declare -A TaskReplaceString
 
 Tasks="js css"
-TaskSourceFile["js"]="build/js/all.js"
-TaskSourceFile["css"]="build/css/all.css"
 TaskReplaceString["js"]="s#<!-- build:js -->\n?([\s\S]*?)\n?<!-- endbuild -->#<script async src='js/%s.js'></script>#"
 TaskReplaceString["css"]="s#<!-- build:css -->\n?([\s\S]*?)\n?<!-- endbuild -->#<link href='css/%s.css' rel=stylesheet type='text/css'/>#"
 
-cp index.html build/tmp.html
-
 for task in $Tasks; do
-  hash=$(sha1sum -b ${TaskSourceFile[$task]} | cut -c1-40 | base64 | cut -c3-8)
+  source="build/${task}/all.${task}"
+  hash=$(sha1sum -b ${source} | cut -c1-40 | base64 | cut -c3-8)
   dest="build/${task}/${hash}.${task}"
-  cp ${TaskSourceFile[$task]} ${dest}
+
+  cp ${source} ${dest}
+  cp ${source}.gz ${dest}.gz
+  cp ${source}.br ${dest}.br
+  touch --date="${constDate}" ${dest} ${dest}.gz ${dest}.br
+
   regx=$(printf "${TaskReplaceString[$task]}" "${hash}")
   echo "${task}:" ${regx}
   perl -0777 -i -pe "${regx}" build/tmp.html
-  touch --date="${constDate}" ${dest}
-  zopfli --force --best --i20 --keep ${dest}
-  brotli --force --quality 11 --repeat 20 --input ${dest} --output ${dest}.br
-  # Zopfli does not copy last modified
-  touch --date="${constDate}" ${dest}.gz
 done
 
 Fonts="400i 400 700i 700"
@@ -32,13 +29,4 @@ for font in $Fonts; do
   hash=$(sha1sum -b "font/lt${font}.woff2" | cut -c1-40 | base64 | cut -c3-8)
   perl -0777 -i -pe "s#font/lt${font}.ttf#font/${hash}.woff2#" build/tmp.html
 done
-
-html-minifier -c htmlminifier.conf build/tmp.html > build/index.html
-rm -rf build/tmp.html
-touch --date="${constDate}" build/index.html
-zopfli --force --best       --i20       --keep  build/index.html
-brotli --force --quality 11 --repeat 20 --input build/index.html --output build/index.html.br
-touch build/index.html
-touch build/index.html.br
-touch build/index.html.gz
 

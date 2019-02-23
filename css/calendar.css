@@ -17,20 +17,22 @@
 .cdt {
   margin-left: 0.8em;
   font-size: 13px;
-  max-height: 0;
   overflow: hidden;
-  transition: 0.3s;
+  transition: max-height 0.3s, opacity 0.3s, margin-top 0.3s;
+  margin-top: 0;
+  max-height: 0;
   opacity: 0;
 }
 
 .cdt.show {
   margin-top: 5px;
-  opacity: 1;
   max-height: 150px;
+  opacity: 1;
 }
 
 .cdt.show.masked {
-  opacity: 0.2;
+  transition: none;
+  margin-top: 5px;
 }
 
 tr {
