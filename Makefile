@@ -17,7 +17,7 @@ build/css/all.css: font/Makefile $(ttfFonts) $(woffFonts) $(woff2Fonts) \
 	rm build/css/lato.css
 
 build/js/all.js: js/texne.js js/popup.js js/calendar.js js/entry.js \
-                 references/main.bib \
+                 references/main.bib references/bibtool.rsc \
                  papers/*/changelog.txt
 	mkdir -p build/js
 	cp js/entry.js build/js/entry.js
@@ -28,7 +28,12 @@ build/js/all.js: js/texne.js js/popup.js js/calendar.js js/entry.js \
 	     | uglifyjs -m -o $@
 	rm -f build/js/entry.js
 
+build/img/all.png: img/all.png
+	mkdir -p build/img
+	pngcrush -brute $^ $@
+
 build/index.html: font/Makefile $(woff2Fonts) \
+                  build/img/all.png \
                   build/js/all.js build/js/all.js.gz build/js/all.js.br \
                   build/css/all.css build/css/all.css.gz build/css/all.css.br \
                   index.html

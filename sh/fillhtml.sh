@@ -29,3 +29,7 @@ for font in $Fonts; do
   perl -0777 -i -pe "s#font/lt${font}.ttf#font/${hash}.woff2#" build/tmp.html
 done
 
+hash=$(sha1sum -b "build/img/all.png" | cut -c1-40 | base64 | cut -c3-8)
+cp build/img/all.png build/img/${hash}.png
+perl -0777 -i -pe "s#img/all.png#img/${hash}.png#" build/tmp.html
+

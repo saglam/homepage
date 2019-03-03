@@ -13,7 +13,7 @@ CompressionToExtension["none"]=""
 CompressionToExtension["gz"]=".gz"
 CompressionToExtension["br"]=".br"
 
-Tasks="css js woff2 woff ttf"
+Tasks="css js woff2 woff ttf png"
 
 declare -A TaskToContentType
 declare -A TaskToDirectory
@@ -23,12 +23,14 @@ TaskToContentType["css"]="text/css"
 TaskToContentType["woff2"]="font/woff2"
 TaskToContentType["woff"]="font/woff"
 TaskToContentType["ttf"]="font/ttf"
+TaskToContentType["png"]="image/png"
 
 TaskToDirectory["js"]="js"
 TaskToDirectory["css"]="css"
 TaskToDirectory["woff2"]="font"
 TaskToDirectory["woff"]="font"
 TaskToDirectory["ttf"]="font"
+TaskToDirectory["png"]="img"
 
 for task in $Tasks; do
   for comp in $Compression; do
@@ -48,7 +50,7 @@ done
 for comp in $Compression; do
   aws s3 cp --metadata-directive REPLACE \
             --acl public-read \
-            --cache-control "private, max-age=0" ${CompressionToEncoding[$comp]} \
+            --cache-control "public" ${CompressionToEncoding[$comp]} \
             --content-type "text/html; charset=utf-8" \
             build/index.html${CompressionToExtension[$comp]} \
             s3://mert.saglam.id/index.html${CompressionToExtension[$comp]}

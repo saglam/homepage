@@ -57,8 +57,18 @@
 
 .min {
   vertical-align: baseline;
-  font-size: 110%;
+  font-size: 120%;
   margin: 0 -0.1em;
+}
+
+.mdiv{
+  display: inline-block;
+  transform: scale(1, 1.4);
+  margin: 0 -0.15em;
+}
+
+.mmns {
+  margin: 0 -0.15em;
 }
 
 .masx {

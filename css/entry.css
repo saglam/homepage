@@ -66,6 +66,12 @@ pre {
   margin: 40px auto;
 }
 
+#eph{
+  float: right;
+  border: 1px solid #777;
+  margin:0 0 10px 10px;
+}
+
 .v {
   font-size: 10px;
   color: #96B;
@@ -95,13 +101,13 @@ pre {
   padding: 0 10% 0 4%;
   font-size: 13px;
   overflow: hidden;
-  transition: max-height 0.2s, opacity 0.3s;
+  transition: max-height 0.3s, opacity 0.3s;
   max-height: 0;
   opacity: 0;
 }
 
 .abs.show {
-  max-height: 400px;
+  max-height: 600px;
   opacity: 1;
 }
 

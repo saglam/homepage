@@ -45,10 +45,13 @@ Our lower bound applies even to the simpler task of computing the OR of k in
 (with Hossein Jowhari and Gábor Tardos)
 30th Symposium on Principles of Database Systems (PODS 2011)
 [pdf] [abstract] [arXiv] [slides] [bib]
-We present Lp sampling algorithms using O(log2 n) bits of space for p ∈ [0, 2) in the streaming model and show that Ω(log2 n) space is required by any such algorithm.
+We present -error L sampling algorithms using O( log2 ) bits of space for ∈ [0, 2) in the streaming model and show that Ω(log2 n) space is required by any such algorithm.
 
 As an application, we present an O(log2 n) space algorithm for finding a duplicate in a stream of length n + 1 over the alphabet [n], improving on the previous O(log3 n) bound due to Gopalan and Radhakrishnan.
+Our Ω(log2) lower bound applies here as well, showing this improvement is final.
 
+In FOCS 2018, Rajesh Jayaram and David P. Woodruff gave perfect L samplers for  ∈ [0, 2) with O(log2 n) bits of space, improving on our O( log2 ) space sampler. 
+In FOCS 2017, Michael Kapralov, Jelani Nelson, Jakub Pachocki, Zhengyu Wang, David P. Woodruff, Mobin Yahyazadeh gave an Ω(log2 log(1 /)) lower bound to universal relation, where δ is the error probability of the protocol, improving on our Ω(log2 n) lower bound.
 
 (with Funda Ergün and Hossein Jowhari)
 14th Intl. Workshop on Randomization and Computation (RANDOM 2010)
@@ -56,3 +59,5 @@ As an application, we present an O(log2 n) space algorithm for finding a dup
 We give an O(log2 n) space one pass streaming algorithm that finds the period of a stream, provided the stream is periodic. At the core of this algorithm is a new one pass O(log n log m) space pattern matching algorithm for finding occurrences of a length m pattern in a text of size n. This algorithm uses similar ideas to Porat and Porat’s algorithm in FOCS 2009 but it does not need an offline pre-processing stage and is simpler.
 
 In the second part, we study distance to p-periodicity under the Hamming metric and provide space efficient approximation algorithms.
+
++−

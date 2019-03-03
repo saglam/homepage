@@ -37,6 +37,7 @@ var Spaces = {
  */
 var Substitute = {
   // Atom.Ord
+  "eps"   : [Atom.Ord  , "<i>ϵ</i>"],
   "Theta" : [Atom.Ord  , "Θ"],
   "theta" : [Atom.Ord  , "θ"],
   "Omega" : [Atom.Ord  , "Ω"],
@@ -44,12 +45,15 @@ var Substitute = {
   "reals" : [Atom.Ord  , "ℝ"],
   "infty" : [Atom.Ord  , "∞"],
   "\\|"   : [Atom.Ord  , "‖"],
+  "delta" : [Atom.Ord  , "<i>δ</i>"],
   // Atom.Op
   "log"   : [Atom.Op   , null],
   // Atom.Bin
   "times" : [Atom.Bin  , "×"],
   "*"     : [Atom.Bin  , '<span class=masx>*</span>'],
   "+"     : [Atom.Bin  , '+'],
+  "/"     : [Atom.Bin  , '<span class=mdiv>/</span>'],
+  "-"     : [Atom.Bin  , '<span class=mmns>−</span>'],
   // Atom.Rel
   "="     : [Atom.Rel  , '<span class=meq>=</span>'],
   "to"    : [Atom.Rel  , "<span class=mto>→</span>"],
