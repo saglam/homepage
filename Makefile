@@ -28,16 +28,15 @@ build/js/all.js: js/texne.js js/popup.js js/calendar.js js/entry.js \
 	     | uglifyjs -m -o $@
 	rm -f build/js/entry.js
 
-build/img/all.png: img/all.png
-	mkdir -p build/img
+img/all.png: img/lugano.png
 	pngcrush -brute $^ $@
 
 build/index.html: font/Makefile $(woff2Fonts) \
-                  build/img/all.png \
+                  img/all.png \
                   build/js/all.js build/js/all.js.gz build/js/all.js.br \
                   build/css/all.css build/css/all.css.gz build/css/all.css.br \
                   index.html
-	mkdir -p build
+	mkdir -p build build/img
 	cp index.html build/tmp.html
 	./sh/fillhtml.sh
 	html-minifier -c htmlminifier.conf build/tmp.html > build/index.html

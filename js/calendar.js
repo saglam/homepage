@@ -11,7 +11,7 @@ let CalendarDetailElements = [];
 /**
  * @type {Element}
  */
-let ShowDetail;
+let NextDetail;
 
 function getTogglerFor(/** @type {Element} */ detailElement) {
   return function() {
@@ -34,7 +34,7 @@ function HammingLauncher()  {
 
 function linkCalendar(/** Element */ calendar) {
   for (let i = 0; i < calendar.rows.length; ++i) {
-    /** @type {Element} */
+    /** @const {Element} */
     let cell = calendar.rows[i].cells[2];
     /** @type {Element} */
     let link = cell.firstElementChild;    
@@ -46,6 +46,10 @@ function linkCalendar(/** Element */ calendar) {
     let detail = link.nextElementSibling;
     if (detail == null) {
       continue;
+    }
+
+    if (calendar.rows[i].cells[0].classList.contains("next")) {
+      NextDetail = detail;
     }
 
     renderElement(detail);
@@ -66,7 +70,6 @@ function linkCalendar(/** Element */ calendar) {
           return false;
         }
       } else if ("hamming-ias" == id) {
-        ShowDetail = detail;
         elem.onclick = HammingLauncher;
       }
     }
@@ -74,9 +77,9 @@ function linkCalendar(/** Element */ calendar) {
 }
 
 linkCalendar(document.getElementById("cal"));
-if (ShowDetail) {
+if (NextDetail) {
   window.onload = function() {
-    ShowDetail.classList.remove("masked");
+    NextDetail.classList.remove("masked");
   }
 }
 
